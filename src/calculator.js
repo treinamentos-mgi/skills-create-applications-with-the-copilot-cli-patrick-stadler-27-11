@@ -40,6 +40,27 @@ function division(a, b) {
   return a / b;
 }
 
+// Módulo: retorna o resto da divisão de a por b (divisão por zero lança erro)
+function modulo(a, b) {
+  if (b === 0) {
+    throw new Error('Módulo por zero não é permitido.');
+  }
+  return a % b;
+}
+
+// Potência: retorna base elevada a exponent
+function power(base, exponent) {
+  return base ** exponent;
+}
+
+// Raiz quadrada: retorna a raiz quadrada de n (números negativos lançam erro)
+function squareRoot(n) {
+  if (n < 0) {
+    throw new Error('Não é possível calcular a raiz quadrada de um número negativo.');
+  }
+  return Math.sqrt(n);
+}
+
 const operations = {
   addition, '+': addition,
   subtraction, '-': subtraction,
@@ -82,4 +103,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { addition, subtraction, multiplication, division, calculate };
+module.exports = { addition, subtraction, multiplication, division, modulo, power, squareRoot, calculate };
